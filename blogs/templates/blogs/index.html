@@ -1,0 +1,10 @@
+{% if blog_posts %}
+	{% for blog in blog_posts %}
+	<h1><a href="/{{ blog.id }}/">{{ blog.title }}</a><br></h1>
+	{{ blog.pub_date }}<br>
+	<p> {{ blog.content }} </p>
+	<hr>
+	{% endfor %}
+{% else %}
+	<p> There are no blogs! </p>
+{% endif %}
