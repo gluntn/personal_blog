@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Main template for webpage -->
 <html>
   <head>
     {% load staticfiles %}
@@ -19,28 +20,15 @@
           <li><a href="#">Work</a></li>
         </ul>
         <ul id="social-media">
-          <li id="twitter"><a href="#"><img src="{% static 'blogs/twitter-logo.svg' %}" alt="Twitter" /></a></li>
-          <li id="github"><a href="#"><img src="{% static 'blogs/github-logo.svg' %}" alt="Github" /></a></li>
+          <li id="twitter"><a href="https://twitter.com/_wost"><img src="{% static 'blogs/twitter-logo.svg' %}" alt="Twitter" /></a></li>
+          <li id="github"><a href="https://github.com/wOstensen"><img src="{% static 'blogs/github-logo.svg' %}" alt="Github" /></a></li>
           <li></li>
         </ul>
       </nav>
       <div class="separator"></div>
       <!-- Django -->
-      <div id="blog-wrapper">
-        {% if blog_posts %}
-          {% for post in blog_posts %}
-            <article class="blog-post">
-              <h3 class="blog-title"><a href="{{ post.get_detail_link }}">{{ post.title }}</a></h3>
-              <h5 class="date-and-author">{{ post.pub_date }} by {{ post.author }}</h2>
-              <p class="blog-content">{{ post.content }}</p>
-              <a href="{{ post.get_detail_link }}">Read more...</a>
-              <hr>
-            </article>
-          {% endfor %}
-          {% else %}
-            <h3>There are no posts...?</h3>
-        {% endif %}
-      </div>
+      {% block content %}
+      {% endblock %}
       <!-- Django end -->
     </div>
   </body>

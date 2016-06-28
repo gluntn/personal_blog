@@ -7,7 +7,7 @@ from .models import BlogPost
 
 def index(request):
 	blog_posts = BlogPost.objects.all()[::-1]
-	return render(request, 'blogs/index.html', {'blog_posts': blog_posts})
+	return render(request, 'blogs/blogposts.html', {'blog_posts': blog_posts})
 
 def detail(request, blog_id):
 	blog = get_object_or_404(BlogPost, pk=blog_id)

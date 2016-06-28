@@ -20,8 +20,13 @@ class BlogPost(models.Model):
 	content = models.TextField()
 
 	def __str__(self):
+		# Makes it easier to read in the shell
 		return self.title
 
 	def get_detail_link(self):
         # Returns the detail link for the blog post
 		return "/{0}/".format(self.id)
+
+	def get_date_and_author(self):
+		# Returns the date and the author for the blog post
+		return "Posted {0} by {1}".format(self.pub_date, self.author)
