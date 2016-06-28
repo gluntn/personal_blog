@@ -1,7 +1,20 @@
 {% extends 'blogs/index.html' %}
 
+{% block _title %} Home {% endblock _title %}
+
+{% block menu %}
+
+    <style> #{{ active }} { text-decoration: underline; } </style>
+
+    <li><div id="title"><span>{</span> <a href="#">wost</a> <span>}</span></div></li>
+    <li><a href="{% url 'index' %}" id="0">Home</a></li>
+    <li><a href="{% url 'about' %}" id="1">About</a></li>
+    <li><a href="#" id="2">Contact</a></li>
+    <li><a href="#" id="3">Work</a></li>
+
+{% endblock menu %}
+
 {% block content %}
-  <div id="blog-wrapper">
     {% if blog_posts %}
       {% for post in blog_posts %}
         <article class="blog-post">
@@ -15,5 +28,4 @@
       {% else %}
         <h3>There are no posts...?</h3>
     {% endif %}
-  </div>
 {% endblock content %}

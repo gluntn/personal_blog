@@ -21,4 +21,5 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^', include('blogs.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^about/', include('about.urls')),
 ]

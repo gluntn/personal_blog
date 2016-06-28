@@ -3,6 +3,7 @@
 <html>
   <head>
     {% load staticfiles %}
+    <title>{% block _title %}{% endblock %}</title>
     <meta charset="utf-8">
     <title>Test design</title>
     <link rel="stylesheet" href="{% static 'blogs/main.css' %}">
@@ -12,24 +13,19 @@
   <body>
     <div id="wrapper">
       <nav id="navbar">
-        <ul id="menu">
-          <li><div id="title"><span>{</span> <a href="#">wost</a> <span>}</span></div></li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Work</a></li>
-        </ul>
+      {% block menu %}
+
+      {% endblock %}
         <ul id="social-media">
           <li id="twitter"><a href="https://twitter.com/_wost"><img src="{% static 'blogs/twitter-logo.svg' %}" alt="Twitter" /></a></li>
           <li id="github"><a href="https://github.com/wOstensen"><img src="{% static 'blogs/github-logo.svg' %}" alt="Github" /></a></li>
           <li></li>
         </ul>
       </nav>
-      <div class="separator"></div>
-      <!-- Django -->
-      {% block content %}
-      {% endblock %}
-      <!-- Django end -->
+      <div id="blog-wrapper">
+        {% block content %}
+        {% endblock %}
+      </div>
     </div>
   </body>
 </html>

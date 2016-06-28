@@ -1,7 +1,36 @@
+{% extends 'blogs/index.html' %}
+
+{% block _title %} {{ blog.title }} {% endblock _title %}
+
+{% block menu %}
+
+    <style> #{{ active }} { text-decoration: underline; } </style>
+
+    <li><div id="title"><span>{</span> <a href="#">wost</a> <span>}</span></div></li>
+    <li><a href="{% url 'index' %}" id="0">Home</a></li>
+    <li><a href="{% url 'about' %}" id="1">About</a></li>
+    <li><a href="#" id="2">Contact</a></li>
+    <li><a href="#" id="3">Work</a></li>
+
+{% endblock menu %}
+
+{% block content %}
+
+<style>
+article { text-align: left; }
+h1 { color: #028482; }
+h1, h5, h6 { margin: 0; }
+a:first-child { color: #666; }
+a:first-child:hover { color: #888; }
+</style>
+
 <article>
-	<h3>{{ blog.title }} </h3>
-	by {{ blog.author }} <br> {{ blog.pub_date }} <br>
-	{{ blog.content }}
+	<h6><a href="javascript:window.history.back()">< Go Back</a></h6>
+	<h1 class="blog-title">{{ blog.title }}</h3>
+	<h5 class="date-and-author">Written {{ blog.pub_date }} by {{ blog.author }}</h2>
+	<p class="blog-content">{{ blog.content }}</p>
+	<br><br>
+	<b>Comment(s): </b>
 </article>
 
-<a href="/">< Back</a>
+{% endblock %}

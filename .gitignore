@@ -1,6 +1,7 @@
 *.pyc
 vir/*
 vir
+about/templates/about/about.html
 design/*
 design
 *~

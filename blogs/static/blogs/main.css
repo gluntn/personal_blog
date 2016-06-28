@@ -39,6 +39,9 @@ html {
   /*background: #eee;*/
 }
 
+#menu #active {
+  text-decoration: underline;
+}
 
 #navbar {
   text-align: center;
