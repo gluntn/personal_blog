@@ -1,0 +1,122 @@
+html {
+  background: #b3dad9;
+  height: 100%;
+}
+ /* Wrapper for the webpage */
+#wrapper {
+  color: #333;
+  width: 60%;
+  height: 100%;
+  text-align: center;
+  margin: 1em auto;
+  background: #eee;
+  font-family: 'Lora';
+}
+
+/* Title in the webpage */
+#title {
+  font-size: 3em;
+  margin-bottom: 0.25em;
+  padding-top: 0.15em;
+}
+
+#title a:hover {
+  text-decoration: none;
+}
+
+#title span {
+  color: #028482;
+  font-family: 'arial';
+}
+
+#title a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Navigation bar for the webpage */
+#menu {
+  /*background: #eee;*/
+}
+
+
+#navbar {
+  text-align: center;
+  padding: 0;
+}
+
+#navbar ul {
+  padding: 0;
+}
+
+#social-media {
+  margin-top: 1em;
+}
+
+#social-media li a img {
+  width: 24px;
+  height: 24px;
+}
+
+#navbar li {
+  list-style-type: none;
+  display: inline;
+}
+
+#navbar li a {
+  text-decoration: none;
+  color: #333;
+}
+
+#navbar li a:hover {
+  text-decoration: underline;
+}
+
+#navbar a {
+  margin: 0 10px;
+}
+
+/* CSS Separator */
+.separator {
+  border: 1px solid #eee;
+}
+
+/* Blog content, or; content in general */
+#blog-wrapper {
+  height: 100%;
+  background: #fff;
+  padding: 1em 1em;
+}
+
+.blog-post {
+  text-align: left;
+  margin-bottom: 0.3em;
+  line-height: 1.5em;
+}
+
+.blog-post h3 {
+  font-size: 1.75em;
+  margin: 0.125em 0 0.2em 0;
+  letter-spacing: 0.025em;
+}
+
+.blog-post hr {
+  width: 90%;
+  border: 0;
+  margin: 1.5em 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.blog-post a, .blog-post a:visited {
+  text-decoration: none;
+  color: #028482;
+}
+
+.blog-post a:hover, .blog-post a:visited:hover {
+  text-decoration: underline;
+}
+
+.blog-post h5 {
+  margin: 0;
+}

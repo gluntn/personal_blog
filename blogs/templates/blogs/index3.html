@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+
+<style>
+	article {
+		border-bottom: 1px solid black;
+		margin: 10px 10px;
+	}
+
+	article h1 {
+		font-size: 1.75em;
+	}
+
+	article a {
+		text-decoration: none;
+		color: #333;
+	}
+	article a:hover {
+		color: #666;
+	}
+	article a:last-child {
+		font-weight: bold;
+	}
+
+	article p {
+		letter-spacing: 0.100em;
+	}
+</style>
+
+{% if blog_posts %}
+	{% for blog in blog_posts %}
+	<article>
+	<h1><a href="{{ blog.get_detail_link }}">{{ blog.title }}</a><br></h1>
+	{{ blog.pub_date }}<br>
+	<p> {{ blog.content }} </p>
+	<a href="{{ blog.get_detail_link }}">Read more...</a>
+	</article>
+	{% endfor %}
+{% else %}
+	<p> There are no blogs! </p>
+{% endif %}

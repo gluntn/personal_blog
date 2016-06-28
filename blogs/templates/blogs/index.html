@@ -1,10 +1,47 @@
-{% if blog_posts %}
-	{% for blog in blog_posts %}
-	<h1><a href="/{{ blog.id }}/">{{ blog.title }}</a><br></h1>
-	{{ blog.pub_date }}<br>
-	<p> {{ blog.content }} </p>
-	<hr>
-	{% endfor %}
-{% else %}
-	<p> There are no blogs! </p>
-{% endif %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <title>Test design</title>
+    <link rel="stylesheet" href="{% static 'blogs/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+      <nav id="navbar">
+        <ul id="menu">
+          <li><div id="title"><span>{</span> <a href="#">wost</a> <span>}</span></div></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Work</a></li>
+        </ul>
+        <ul id="social-media">
+          <li id="twitter"><a href="#"><img src="{% static 'blogs/twitter-logo.svg' %}" alt="Twitter" /></a></li>
+          <li id="github"><a href="#"><img src="{% static 'blogs/github-logo.svg' %}" alt="Github" /></a></li>
+          <li></li>
+        </ul>
+      </nav>
+      <div class="separator"></div>
+      <!-- Django -->
+      <div id="blog-wrapper">
+        {% if blog_posts %}
+          {% for post in blog_posts %}
+            <article class="blog-post">
+              <h3 class="blog-title"><a href="{{ post.get_detail_link }}">{{ post.title }}</a></h3>
+              <h5 class="date-and-author">{{ post.pub_date }} by {{ post.author }}</h2>
+              <p class="blog-content">{{ post.content }}</p>
+              <a href="{{ post.get_detail_link }}">Read more...</a>
+              <hr>
+            </article>
+          {% endfor %}
+          {% else %}
+            <h3>There are no posts...?</h3>
+        {% endif %}
+      </div>
+      <!-- Django end -->
+    </div>
+  </body>
+</html>

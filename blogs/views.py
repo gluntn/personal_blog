@@ -6,7 +6,7 @@ from .models import BlogPost
 # Create your views here.
 
 def index(request):
-	blog_posts = BlogPost.objects.all()
+	blog_posts = BlogPost.objects.all()[::-1]
 	return render(request, 'blogs/index.html', {'blog_posts': blog_posts})
 
 def detail(request, blog_id):

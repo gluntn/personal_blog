@@ -1,5 +1,6 @@
 *.pyc
 vir/*
-vir/
 vir
+design/*
+design
 *~

@@ -22,3 +22,6 @@ class BlogPost(models.Model):
 	def __str__(self):
 		return self.title
 
+	def get_detail_link(self):
+        # Returns the detail link for the blog post
+		return "/{0}/".format(self.id)
