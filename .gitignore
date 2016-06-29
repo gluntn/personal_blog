@@ -1,6 +1,4 @@
 *.pyc
-vir/*
-vir
 simple_page/templates/about/about.html
 design/*
 design
