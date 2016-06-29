@@ -13,9 +13,13 @@
   <body>
     <div id="wrapper">
       <nav id="navbar">
-      {% block menu %}
-
-      {% endblock %}
+        <li><div id="title"><span>{</span> <a href="{% url 'index' %}">wost</a> <span>}</span></div></li>
+        <ul id="menu" style="margin:0;">
+          <li><a href="{% url 'index' %}" id="0">Home</a></li>
+          <li><a href="{% url 'about' %}" id="1">About</a></li>
+          <li><a href="#" id="2">Contact</a></li>
+          <li><a href="#" id="3">Work</a></li>
+        </ul>
         <ul id="social-media">
           <li id="twitter"><a href="https://twitter.com/_wost"><img src="{% static 'blogs/twitter-logo.svg' %}" alt="Twitter" /></a></li>
           <li id="github"><a href="https://github.com/wOstensen"><img src="{% static 'blogs/github-logo.svg' %}" alt="Github" /></a></li>
@@ -27,5 +31,7 @@
         {% endblock %}
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'blogs/js_jquery.js' %}"></script>
   </body>
 </html>

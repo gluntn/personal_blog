@@ -11,6 +11,9 @@ html {
   margin: 1em auto;
   background: #eee;
   font-family: 'Lora';
+  -webkit-box-shadow: 10px 10px 0px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 10px 10px 0px -4px rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 0px -4px rgba(0,0,0,0.2);
 }
 
 /* Title in the webpage */
@@ -34,12 +37,7 @@ html {
     color: #333;
 }
 
-/* Navigation bar for the webpage */
-#menu {
-  /*background: #eee;*/
-}
-
-#menu #active {
+#menu .active {
   text-decoration: underline;
 }
 

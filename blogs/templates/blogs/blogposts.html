@@ -2,24 +2,12 @@
 
 {% block _title %} Home {% endblock _title %}
 
-{% block menu %}
-
-    <style> #{{ active }} { text-decoration: underline; } </style>
-
-    <li><div id="title"><span>{</span> <a href="#">wost</a> <span>}</span></div></li>
-    <li><a href="{% url 'index' %}" id="0">Home</a></li>
-    <li><a href="{% url 'about' %}" id="1">About</a></li>
-    <li><a href="#" id="2">Contact</a></li>
-    <li><a href="#" id="3">Work</a></li>
-
-{% endblock menu %}
-
 {% block content %}
     {% if blog_posts %}
       {% for post in blog_posts %}
         <article class="blog-post">
           <h3 class="blog-title"><a href="{{ post.get_detail_link }}">{{ post.title }}</a></h3>
-          <h5 class="date-and-author">{{ post.get_date_and_author }}</h2>
+          <h5 class="date-and-author">Posted <abbr title="{{ post.pub_date|date:'H:i'}}">{{ post.pub_date|date:'d M Y' }}</abbr> by {{ post.author }}</h5>
           <p class="blog-content">{{ post.content }}</p>
           <a href="{{ post.get_detail_link }}">Read more...</a>
           <hr>
